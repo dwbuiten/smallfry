@@ -1,0 +1,6 @@
+EXPORTS
+	smallfryfreectx
+	smallfryoptimize
+	smallfrygetsize
+	smallfrygetbuffer
+	smallfryallocctx

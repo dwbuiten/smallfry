@@ -1,0 +1,8 @@
+SMALLFRY_1 {
+    global: smallfryfreectx;
+            smallfryoptimize;
+            smallfrygetsize;
+            smallfrygetbuffer;
+            smallfryallocctx;
+    local:  *;
+};
