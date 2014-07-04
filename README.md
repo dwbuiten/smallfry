@@ -8,7 +8,7 @@ I wrote this hack-of-a-program in early 2013, and largely ignored it since. Now 
 
 **Usability**
 
-A small CLI util is provided, along with a (crappy) API and library. The code is just C89, and can be compiled with pretty much any compiler. Binaries are provided for Windows in the releases section.
+A small CLI util is provided, along with a (crappy) API and library. The code is just C89, and can be compiled with pretty much any compiler. Binaries are provided for Windows in the releases section. It does however required mozjpeg to build currently, and in lieu of a proper configure script, it can be built with vanilla libjpeg by simply commenting out the offending lines in `ijgenc.c` that set mozjpeg-only struct members (sorry!).
 
 The code is very sub-optimal and slow. Pull requests are welcome. I am lazy.
 
