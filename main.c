@@ -32,6 +32,7 @@ int main(int argc, char **argv)
     FILE *in, *out;
     uint8_t *inbuf;
     uint64_t size;
+    uint64_t outsize;
     int ret;
 
     if (argc < 3) {
@@ -79,7 +80,12 @@ int main(int argc, char **argv)
     if (ret)
         printf("Cannot decode.\n");
 
-    fwrite(smallfrygetbuffer(ctx), 1, smallfrygetsize(ctx), out);
+    outsize = smallfrygetsize(ctx);
+    if (outsize <= size)
+        fwrite(smallfrygetbuffer(ctx), 1, outsize, out);
+    else
+        fwrite(inbuf, 1, size, out);
+
     fclose(out);
 
     smallfryfreectx(&ctx);
