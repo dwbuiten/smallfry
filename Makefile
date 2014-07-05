@@ -17,13 +17,13 @@ LIBS=-ljpeg -lm
 all: smallfry lib
 
 smallfry: $(OBJ)
-	$(CC) -o $@ $^ $(LIBS)
+	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
 
 $(LIBOBJ):
 	$(CC) -fPIC $(CFLAGS) -c $(@:.lo=.c) -o $@
 
 libsmallfry.so: $(LIBOBJ)
-	$(CC) -Wl,--version-script,smallfry.ver -shared -o $@ $^ $(LIBS)
+	$(CC) -Wl,--version-script,smallfry.ver -shared -o $@ $^ $(LDFLAGS) $(LIBS)
 
 lib: libsmallfry.so
 
