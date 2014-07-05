@@ -62,7 +62,7 @@ int jpeg_encode(uint8_t *in, uint8_t *out, jinfo res, int quality)
     cinfo.lambda_log_scale1 = 10.5;
     cinfo.lambda_log_scale2 = 13.0;
    
- cinfo.use_lambda_weight_tbl = TRUE;
+    cinfo.use_lambda_weight_tbl = TRUE;
 
     cinfo.dest->init_destination    = &init;
     cinfo.dest->empty_output_buffer = &empty;
