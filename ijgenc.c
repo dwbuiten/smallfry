@@ -58,9 +58,9 @@ int jpeg_encode(uint8_t *in, uint8_t *out, jinfo res, int quality)
 
     jpeg_set_defaults(&cinfo);
 
-    cinfo.use_flat_quant_tbl = TRUE;
-    cinfo.lambda_log_scale1 = 10.5;
-    cinfo.lambda_log_scale2 = 13.0;
+    cinfo.use_flat_quant_tbl = FALSE;
+    cinfo.lambda_log_scale1 = 14.25;
+    cinfo.lambda_log_scale2 = 12.75;
    
     cinfo.use_lambda_weight_tbl = TRUE;
 
